@@ -81,6 +81,3 @@ Id,SalePrice
 - Análisis de importancia de variables.
 - Validación de outliers y transformación de variables sesgadas.
 
-## Seguridad
-
-El proyecto no requiere credenciales ni tokens. Los artefactos generados quedan excluidos de Git mediante `.gitignore`.
