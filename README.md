@@ -1,40 +1,40 @@
 # Housing ML
 
-Modelo de machine learning para predecir precios de vivienda en Ames, Iowa, basado en el reto de Kaggle Home Data for ML Course. El repositorio incluye los CSV de entrenamiento y prueba, un notebook exploratorio y un script reproducible para entrenar el modelo y generar `submission.csv`.
+Machine learning project for predicting housing prices in Ames, Iowa, based on Kaggle's Home Data for ML Course challenge. The repository includes the train and test CSV files, an exploratory notebook and a reproducible script to train the model and generate `submission.csv`.
 
-## Objetivo
+## Objective
 
-Predecir `SalePrice` a partir de variables numéricas y categóricas de cada propiedad. La métrica del reto es RMSE sobre el logaritmo del precio, equivalente a RMSLE sobre el precio original.
+Predict `SalePrice` from numerical and categorical property features. The competition metric is RMSE over the logarithm of the sale price, which is equivalent to RMSLE on the original price scale.
 
-## Estructura
+## Structure
 
 ```text
 .
-├── train.csv
-├── test.csv
-├── sample_submission.csv
-├── data_description.txt
-├── modelo_predictivo.ipynb
-├── src/
-│   └── train_model.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+|-- train.csv
+|-- test.csv
+|-- sample_submission.csv
+|-- data_description.txt
+|-- modelo_predictivo.ipynb
+|-- src/
+|   `-- train_model.py
+|-- requirements.txt
+|-- .gitignore
+`-- README.md
 ```
 
-## Enfoque
+## Approach
 
-El script principal usa un pipeline de scikit-learn:
+The main script uses a scikit-learn pipeline:
 
-1. Separación de variables predictoras y objetivo.
-2. Transformación `log1p` de `SalePrice`.
-3. Imputación de valores nulos.
-4. Codificación one-hot de variables categóricas.
-5. Entrenamiento con `RandomForestRegressor`.
-6. Validación cruzada con RMSLE.
-7. Generación de `submission.csv`.
+1. Split predictors and target.
+2. Apply `log1p` to `SalePrice`.
+3. Impute missing values.
+4. One-hot encode categorical variables.
+5. Train a `RandomForestRegressor`.
+6. Run cross-validation with RMSLE.
+7. Generate `submission.csv`.
 
-## Instalación
+## Installation
 
 ```bash
 python -m venv .venv
@@ -42,7 +42,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-En Linux o macOS:
+Linux or macOS:
 
 ```bash
 python -m venv .venv
@@ -50,23 +50,23 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Uso
+## Usage
 
-Entrenar y generar el archivo de envío:
+Train the model and generate the submission file:
 
 ```bash
 python src/train_model.py
 ```
 
-Usar rutas personalizadas:
+Use custom paths:
 
 ```bash
 python src/train_model.py --train train.csv --test test.csv --output outputs/submission.csv
 ```
 
-## Resultado
+## Result
 
-La ejecución imprime las puntuaciones de validación cruzada y crea un CSV con el formato esperado por Kaggle:
+The script prints cross-validation scores and creates a CSV in Kaggle submission format:
 
 ```csv
 Id,SalePrice
@@ -74,10 +74,13 @@ Id,SalePrice
 1462,187724.1
 ```
 
-## Mejoras posibles
+## Possible Improvements
 
-- Ajuste de hiperparámetros con `RandomizedSearchCV`.
-- Comparación con modelos de boosting.
-- Análisis de importancia de variables.
-- Validación de outliers y transformación de variables sesgadas.
+- Hyperparameter tuning with `RandomizedSearchCV`.
+- Comparison against boosting models.
+- Feature importance analysis.
+- Outlier validation and skewed feature transformation.
 
+## Security
+
+The project does not require credentials or tokens. Generated artifacts are excluded from Git through `.gitignore`.
