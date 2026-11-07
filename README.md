@@ -57,4 +57,6 @@ src/housing.py               cleaning, features, pipelines, comparison, submissi
 housing.ipynb                exploration and results, executed
 ```
 
-The data comes from Dean De Cock's [Ames Housing dataset](https://jse.amstat.org/v19n3/decock.pdf) as distributed by Kaggle, and is subject to the competition rules.
+## License
+
+The code is under the [MIT license](LICENSE). The data is not: it comes from Dean De Cock's [Ames Housing dataset](https://jse.amstat.org/v19n3/decock.pdf) as distributed by Kaggle, and is subject to the competition rules.
